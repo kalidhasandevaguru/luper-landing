@@ -1,0 +1,1122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="black.ico"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="white.ico"
+      media="(prefers-color-scheme: dark)"
+    />
+    <title>Luper | Garments Engineered for Global Brands</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              luper: {
+                dark: "#13271e",
+                light: "#fffdf5",
+                accent: "#2d5a45", // Lighter green for hover/accents derived from dark
+                gold: "#d4af37", // Gold accent for "Golden Sample" concepts
+                surface: "#f3f0e6", // Slightly darker than light for cards
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              serif: ["Roboto Slab", "serif"], // For Logo
+            },
+            animation: {
+              float: "float 6s ease-in-out infinite",
+              "fade-in-up": "fadeInUp 0.8s ease-out forwards",
+              "slide-in-right": "slideInRight 0.8s ease-out forwards",
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-20px)" },
+              },
+              fadeInUp: {
+                "0%": { opacity: "0", transform: "translateY(20px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+              slideInRight: {
+                "0%": { opacity: "0", transform: "translateX(20px)" },
+                "100%": { opacity: "1", transform: "translateX(0)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <script>
+      window.FontAwesomeConfig = { autoReplaceSvg: "nest" };
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto+Slab:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #fffdf5;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #13271e;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #2d5a45;
+      }
+
+      .hero-text-gradient {
+        background: linear-gradient(to right, #13271e, #2d5a45);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .smooth-scroll {
+        scroll-behavior: smooth;
+      }
+
+      .glass-card {
+        background: rgba(255, 253, 245, 0.8);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(19, 39, 30, 0.05);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-luper-light text-luper-dark font-sans antialiased selection:bg-luper-dark selection:text-luper-light smooth-scroll"
+  >
+    <!-- Navigation -->
+    <nav
+      class="fixed w-full z-50 transition-all duration-300 bg-luper-light/90 backdrop-blur-md border-b border-luper-dark/5"
+      id="navbar"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <!-- Logo -->
+          <div class="flex-shrink-0 flex items-center">
+            <a href="#" class="hover:opacity-80 transition-opacity">
+              <img src="luper_logo.png" alt="LUPER Logo" class="h-10 w-auto" />
+            </a>
+          </div>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="#process"
+              class="text-luper-dark/80 hover:text-luper-dark font-medium transition-colors"
+              >Process</a
+            >
+            <a
+              href="#quality"
+              class="text-luper-dark/80 hover:text-luper-dark font-medium transition-colors"
+              >Quality</a
+            >
+            <a
+              href="#services"
+              class="text-luper-dark/80 hover:text-luper-dark font-medium transition-colors"
+              >Services</a
+            >
+            <a
+              href="#clients"
+              class="text-luper-dark/80 hover:text-luper-dark font-medium transition-colors"
+              >Clients</a
+            >
+            <a
+              href="#contact"
+              class="px-6 py-2.5 bg-luper-dark text-luper-light rounded-full font-medium hover:bg-luper-accent transition-all duration-300 shadow-lg shadow-luper-dark/20 transform hover:-translate-y-0.5"
+            >
+              Start Production
+            </a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden flex items-center">
+            <button
+              id="mobile-menu-btn"
+              class="text-luper-dark hover:text-luper-accent focus:outline-none p-2"
+            >
+              <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-luper-light border-t border-luper-dark/10 absolute w-full transition-all duration-300 ease-in-out origin-top transform scale-y-0 opacity-0"
+      >
+        <div class="px-4 pt-2 pb-6 space-y-2 shadow-xl">
+          <a
+            href="#process"
+            class="block px-3 py-3 rounded-lg text-base font-medium text-luper-dark hover:bg-luper-surface"
+            >Process</a
+          >
+          <a
+            href="#quality"
+            class="block px-3 py-3 rounded-lg text-base font-medium text-luper-dark hover:bg-luper-surface"
+            >Quality</a
+          >
+          <a
+            href="#services"
+            class="block px-3 py-3 rounded-lg text-base font-medium text-luper-dark hover:bg-luper-surface"
+            >Services</a
+          >
+          <a
+            href="#clients"
+            class="block px-3 py-3 rounded-lg text-base font-medium text-luper-dark hover:bg-luper-surface"
+            >Clients</a
+          >
+          <a
+            href="#contact"
+            class="block w-full text-center mt-4 px-6 py-3 bg-luper-dark text-luper-light rounded-full font-medium"
+            >Start Production</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-24 pb-16 lg:pt-40 lg:pb-32 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+          <!-- Text Content -->
+          <div
+            class="w-full lg:w-1/2 text-center lg:text-left space-y-6 md:space-y-8 animate-fade-in-up"
+          >
+            <div
+              class="inline-flex items-center px-4 py-2 rounded-full bg-luper-dark/5 text-luper-dark font-semibold text-xs md:text-sm mb-2 border border-luper-dark/10"
+            >
+              <span
+                class="w-2 h-2 rounded-full bg-green-500 mr-2 animate-pulse"
+              ></span>
+              Accepting New Global Partners for 2024
+            </div>
+
+            <h1
+              class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] text-luper-dark"
+            >
+              Garments
+              <span class="relative whitespace-nowrap">
+                <span class="relative z-10 hero-text-gradient">Engineered</span>
+                <svg
+                  class="absolute bottom-1 md:bottom-2 left-0 w-full h-2 md:h-3 text-yellow-400/30 -z-10"
+                  viewBox="0 0 100 10"
+                  preserveAspectRatio="none"
+                >
+                  <path
+                    d="M0 5 Q 50 10 100 5"
+                    stroke="currentColor"
+                    stroke-width="8"
+                    fill="none"
+                  />
+                </svg>
+              </span>
+              for Global Brands.
+            </h1>
+
+            <p
+              class="text-lg md:text-xl text-luper-dark/70 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-light"
+            >
+              Premium sourcing, controlled manufacturing, and QA-led export
+              systems built for brands that cannot afford inconsistency.
+            </p>
+
+            <div
+              class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4"
+            >
+              <a
+                href="#contact"
+                class="w-full sm:w-auto px-8 py-4 bg-luper-dark text-luper-light rounded-full font-semibold text-lg hover:bg-luper-accent transition-all duration-300 shadow-xl shadow-luper-dark/20 flex items-center justify-center gap-2 group transform hover:-translate-y-1"
+              >
+                Start Your Production
+                <i
+                  class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"
+                ></i>
+              </a>
+            </div>
+
+            <div
+              class="pt-8 flex flex-wrap items-center justify-center lg:justify-start gap-4 md:gap-6 text-xs md:text-sm text-luper-dark/60 font-medium"
+            >
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-check-circle text-luper-dark"></i> ISO
+                9001 Certified
+              </div>
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-check-circle text-luper-dark"></i> Ethical
+                Sourcing
+              </div>
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-check-circle text-luper-dark"></i> Global
+                Logistics
+              </div>
+            </div>
+          </div>
+
+          <!-- Visual Content - 3 Vertical Categories -->
+          <div
+            class="w-full lg:w-1/2 flex justify-center gap-3 md:gap-6 h-[400px] sm:h-[500px] md:h-[600px] perspective-1000"
+          >
+            <!-- Category 1: Hoodies -->
+            <div
+              class="relative w-1/3 h-full rounded-2xl md:rounded-[2rem] overflow-hidden group shadow-2xl transition-transform duration-500 hover:-translate-y-4 cursor-pointer mt-8 md:mt-12 animate-float"
+              style="animation-delay: 0s"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-luper-dark/80 via-transparent to-transparent z-10"
+              ></div>
+              <img
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                src="hoodie.png"
+                alt="Hoodies, professional image"
+              />
+              <div
+                class="absolute bottom-0 left-0 p-3 md:p-6 z-20 w-full text-center"
+              >
+                <span
+                  class="text-[10px] md:text-xs font-bold tracking-widest text-white/80 uppercase mb-1 md:mb-2 block"
+                  >Heavyweight</span
+                >
+                <h3 class="text-white font-bold text-sm md:text-2xl">
+                  Hoodies
+                </h3>
+              </div>
+            </div>
+
+            <!-- Category 2: T-Shirts -->
+            <div
+              class="relative w-1/3 h-full rounded-2xl md:rounded-[2rem] overflow-hidden group shadow-2xl transition-transform duration-500 hover:-translate-y-4 cursor-pointer animate-float"
+              style="animation-delay: 2s"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-luper-dark/80 via-transparent to-transparent z-10"
+              ></div>
+              <img
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                src="t-shirt.png"
+                alt="T-Shirts, professional image"
+              />
+              <div
+                class="absolute bottom-0 left-0 p-3 md:p-6 z-20 w-full text-center"
+              >
+                <span
+                  class="text-[10px] md:text-xs font-bold tracking-widest text-white/80 uppercase mb-1 md:mb-2 block"
+                  >Organic</span
+                >
+                <h3 class="text-white font-bold text-sm md:text-2xl">
+                  T-Shirts
+                </h3>
+              </div>
+            </div>
+
+            <!-- Category 3: Accessories -->
+            <div
+              class="relative w-1/3 h-full rounded-2xl md:rounded-[2rem] overflow-hidden group shadow-2xl transition-transform duration-500 hover:-translate-y-4 cursor-pointer mt-16 md:mt-24 animate-float"
+              style="animation-delay: 4s"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-luper-dark/80 via-transparent to-transparent z-10"
+              ></div>
+              <img
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                src="co-ord.png"
+                alt="Accessories, professional image"
+              />
+              <div
+                class="absolute bottom-0 left-0 p-3 md:p-6 z-20 w-full text-center"
+              >
+                <span
+                  class="text-[10px] md:text-xs font-bold tracking-widest text-white/80 uppercase mb-1 md:mb-2 block"
+                  >Custom</span
+                >
+                <h3 class="text-white font-bold text-sm md:text-2xl">
+                  Accessories
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Decorative background elements -->
+      <div
+        class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-luper-dark/5 rounded-full blur-3xl -z-10"
+      ></div>
+      <div
+        class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-green-900/5 rounded-full blur-3xl -z-10"
+      ></div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 bg-luper-dark text-luper-light">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-white/10"
+        >
+          <div class="p-4">
+            <div
+              class="text-4xl lg:text-5xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60"
+            >
+              15+
+            </div>
+            <p class="text-sm uppercase tracking-widest text-white/60">
+              Years Experience
+            </p>
+          </div>
+          <div class="p-4">
+            <div
+              class="text-4xl lg:text-5xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60"
+            >
+              2M+
+            </div>
+            <p class="text-sm uppercase tracking-widest text-white/60">
+              Units Exported
+            </p>
+          </div>
+          <div class="p-4">
+            <div
+              class="text-4xl lg:text-5xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60"
+            >
+              99.8%
+            </div>
+            <p class="text-sm uppercase tracking-widest text-white/60">
+              QA Pass Rate
+            </p>
+          </div>
+          <div class="p-4">
+            <div
+              class="text-4xl lg:text-5xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60"
+            >
+              40+
+            </div>
+            <p class="text-sm uppercase tracking-widest text-white/60">
+              Global Brands
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: The 4-Gate Quality System -->
+    <section
+      id="quality"
+      class="py-24 bg-luper-surface relative overflow-hidden"
+    >
+      <div
+        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-luper-dark/5 rounded-full -z-10"
+      ></div>
+      <div
+        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-luper-dark/5 rounded-full -z-10"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-20">
+          <span
+            class="text-luper-accent font-bold tracking-widest uppercase text-sm mb-4 block"
+            >Zero Tolerance for Defects</span
+          >
+          <h2 class="text-4xl md:text-5xl font-bold text-luper-dark mb-6">
+            The 4-Gate Quality System
+          </h2>
+          <p class="text-xl text-luper-dark/70">
+            Quality is not inspected at the end. <br class="hidden md:block" />
+            It is
+            <span
+              class="font-bold text-luper-dark border-b-2 border-luper-accent"
+              >locked in</span
+            >
+            at every stage.
+          </p>
+        </div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative"
+        >
+          <!-- Connecting Line (Desktop) -->
+          <div
+            class="hidden lg:block absolute top-12 left-0 w-full h-0.5 bg-luper-dark/10 z-0"
+          ></div>
+
+          <!-- Gate 1 -->
+          <div
+            class="bg-white p-8 rounded-3xl shadow-xl border border-luper-dark/5 relative z-10 group hover:-translate-y-2 transition-transform duration-300"
+          >
+            <div
+              class="w-24 h-24 bg-luper-dark rounded-2xl flex items-center justify-center text-white text-3xl font-bold mb-8 shadow-lg shadow-luper-dark/20 group-hover:scale-110 transition-transform duration-300 mx-auto lg:mx-0"
+            >
+              01
+            </div>
+            <h3
+              class="text-xl font-bold text-luper-dark mb-4 text-center lg:text-left"
+            >
+              Verified Tech Pack Alignment
+            </h3>
+            <p
+              class="text-luper-dark/70 text-sm leading-relaxed text-center lg:text-left"
+            >
+              Every specification is reviewed, production-proofed, and
+              technically validated before manufacturing begins.
+            </p>
+          </div>
+
+          <!-- Gate 2 -->
+          <div
+            class="bg-white p-8 rounded-3xl shadow-xl border border-luper-dark/5 relative z-10 group hover:-translate-y-2 transition-transform duration-300"
+          >
+            <div
+              class="w-24 h-24 bg-luper-gold rounded-2xl flex items-center justify-center text-luper-dark text-3xl font-bold mb-8 shadow-lg shadow-yellow-500/20 group-hover:scale-110 transition-transform duration-300 mx-auto lg:mx-0"
+            >
+              02
+            </div>
+            <h3
+              class="text-xl font-bold text-luper-dark mb-4 text-center lg:text-left"
+            >
+              Golden Sample Approval
+            </h3>
+            <p
+              class="text-luper-dark/70 text-sm leading-relaxed text-center lg:text-left"
+            >
+              Your approved sample becomes the production benchmark — no
+              deviation without authorization.
+            </p>
+          </div>
+
+          <!-- Gate 3 -->
+          <div
+            class="bg-white p-8 rounded-3xl shadow-xl border border-luper-dark/5 relative z-10 group hover:-translate-y-2 transition-transform duration-300"
+          >
+            <div
+              class="w-24 h-24 bg-luper-dark rounded-2xl flex items-center justify-center text-white text-3xl font-bold mb-8 shadow-lg shadow-luper-dark/20 group-hover:scale-110 transition-transform duration-300 mx-auto lg:mx-0"
+            >
+              03
+            </div>
+            <h3
+              class="text-xl font-bold text-luper-dark mb-4 text-center lg:text-left"
+            >
+              In-Process QA Monitoring
+            </h3>
+            <p
+              class="text-luper-dark/70 text-sm leading-relaxed text-center lg:text-left"
+            >
+              Dedicated QA teams monitor fabric, stitching, measurements, trims,
+              and finishing throughout production.
+            </p>
+          </div>
+
+          <!-- Gate 4 -->
+          <div
+            class="bg-white p-8 rounded-3xl shadow-xl border border-luper-dark/5 relative z-10 group hover:-translate-y-2 transition-transform duration-300"
+          >
+            <div
+              class="w-24 h-24 bg-luper-accent rounded-2xl flex items-center justify-center text-white text-3xl font-bold mb-8 shadow-lg shadow-green-600/20 group-hover:scale-110 transition-transform duration-300 mx-auto lg:mx-0"
+            >
+              04
+            </div>
+            <h3
+              class="text-xl font-bold text-luper-dark mb-4 text-center lg:text-left"
+            >
+              Final Export Audit
+            </h3>
+            <p
+              class="text-luper-dark/70 text-sm leading-relaxed text-center lg:text-left"
+            >
+              Pre-shipment inspection with documented compliance to your
+              approved standards.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-16 text-center">
+          <div
+            class="inline-flex items-center gap-8 px-8 py-4 bg-white rounded-full shadow-md border border-luper-dark/5"
+          >
+            <span class="text-sm font-medium text-luper-dark/60"
+              ><i class="fa-solid fa-xmark text-red-500 mr-2"></i> No
+              guesswork</span
+            >
+            <span class="text-sm font-medium text-luper-dark/60"
+              ><i class="fa-solid fa-xmark text-red-500 mr-2"></i> No
+              last-minute surprises</span
+            >
+            <span class="text-sm font-medium text-luper-dark/60"
+              ><i class="fa-solid fa-xmark text-red-500 mr-2"></i> No
+              compromised shipments</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Why Global Brands Choose Us -->
+    <section id="services" class="py-24 bg-luper-light">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row items-center gap-16">
+          <div class="w-full lg:w-1/2">
+            <div
+              class="relative rounded-[2.5rem] overflow-hidden shadow-2xl h-[600px]"
+            >
+              <img
+                src="garment.jpg"
+                alt="Factory Floor"
+                class="w-full h-full object-cover"
+              />
+              <div class="absolute inset-0 bg-luper-dark/40"></div>
+              <div class="absolute bottom-0 left-0 p-10 text-white">
+                <h3 class="text-3xl font-bold mb-4">
+                  Built for Scale. <br />Structured for Precision.
+                </h3>
+                <p class="text-white/80">
+                  We align with brands that prioritize consistency over
+                  shortcuts.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full lg:w-1/2 space-y-8">
+            <h2 class="text-4xl lg:text-5xl font-bold text-luper-dark mb-8">
+              Why Global Brands Choose Us
+            </h2>
+
+            <div class="space-y-6">
+              <!-- Feature 1 -->
+              <div
+                class="flex items-start gap-4 p-4 rounded-xl hover:bg-luper-surface transition-colors duration-300"
+              >
+                <div
+                  class="w-12 h-12 rounded-full bg-luper-dark/10 flex items-center justify-center flex-shrink-0 text-luper-dark"
+                >
+                  <i class="fa-solid fa-industry text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold text-luper-dark">
+                    Verified manufacturing partners
+                  </h4>
+                  <p class="text-luper-dark/60 mt-1">
+                    Access to a vetted network of specialized factories.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Feature 2 -->
+              <div
+                class="flex items-start gap-4 p-4 rounded-xl hover:bg-luper-surface transition-colors duration-300"
+              >
+                <div
+                  class="w-12 h-12 rounded-full bg-luper-dark/10 flex items-center justify-center flex-shrink-0 text-luper-dark"
+                >
+                  <i class="fa-solid fa-magnifying-glass-chart text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold text-luper-dark">
+                    Transparent sourcing practices
+                  </h4>
+                  <p class="text-luper-dark/60 mt-1">
+                    Full visibility into fabric origin and supply chain ethics.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Feature 3 -->
+              <div
+                class="flex items-start gap-4 p-4 rounded-xl hover:bg-luper-surface transition-colors duration-300"
+              >
+                <div
+                  class="w-12 h-12 rounded-full bg-luper-dark/10 flex items-center justify-center flex-shrink-0 text-luper-dark"
+                >
+                  <i class="fa-solid fa-users-viewfinder text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold text-luper-dark">
+                    Dedicated QA oversight teams
+                  </h4>
+                  <p class="text-luper-dark/60 mt-1">
+                    Boots on the ground ensuring your standards are met.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Feature 4 -->
+              <div
+                class="flex items-start gap-4 p-4 rounded-xl hover:bg-luper-surface transition-colors duration-300"
+              >
+                <div
+                  class="w-12 h-12 rounded-full bg-luper-dark/10 flex items-center justify-center flex-shrink-0 text-luper-dark"
+                >
+                  <i class="fa-solid fa-file-contract text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold text-luper-dark">
+                    Export documentation compliance
+                  </h4>
+                  <p class="text-luper-dark/60 mt-1">
+                    Seamless customs clearance with perfect paperwork.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Feature 5 -->
+              <div
+                class="flex items-start gap-4 p-4 rounded-xl hover:bg-luper-surface transition-colors duration-300"
+              >
+                <div
+                  class="w-12 h-12 rounded-full bg-luper-dark/10 flex items-center justify-center flex-shrink-0 text-luper-dark"
+                >
+                  <i class="fa-solid fa-ship text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold text-luper-dark">
+                    On-time international shipment
+                  </h4>
+                  <p class="text-luper-dark/60 mt-1">
+                    Coordinated logistics to meet your retail calendar.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Who We Work With -->
+    <section
+      id="clients"
+      class="py-24 bg-luper-dark text-luper-light relative overflow-hidden"
+    >
+      <!-- Abstract Background Shapes -->
+      <div
+        class="absolute top-0 right-0 w-1/2 h-full bg-white/5 skew-x-12 transform origin-top-right"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold mb-6">
+            Designed for Global Impact
+          </h2>
+          <p class="text-xl text-white/70 max-w-2xl mx-auto">
+            If your brand competes globally, your manufacturing must perform
+            globally.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Card 1 -->
+          <div
+            class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:bg-white/20 transition-all duration-300 text-center group"
+          >
+            <div
+              class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 text-luper-dark text-2xl group-hover:scale-110 transition-transform"
+            >
+              <i class="fa-solid fa-earth-americas"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">International Fashion Labels</h3>
+            <p class="text-white/60 text-sm">
+              Scaling collections across multiple continents.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:bg-white/20 transition-all duration-300 text-center group"
+          >
+            <div
+              class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 text-luper-dark text-2xl group-hover:scale-110 transition-transform"
+            >
+              <i class="fa-solid fa-tags"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Private Label Retailers</h3>
+            <p class="text-white/60 text-sm">
+              Consistent quality for store-owned brands.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:bg-white/20 transition-all duration-300 text-center group"
+          >
+            <div
+              class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 text-luper-dark text-2xl group-hover:scale-110 transition-transform"
+            >
+              <i class="fa-solid fa-crown"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Premium DTC Brands</h3>
+            <p class="text-white/60 text-sm">
+              High-fidelity production for demanding customers.
+            </p>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:bg-white/20 transition-all duration-300 text-center group"
+          >
+            <div
+              class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 text-luper-dark text-2xl group-hover:scale-110 transition-transform"
+            >
+              <i class="fa-solid fa-truck-plane"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Global Distributors</h3>
+            <p class="text-white/60 text-sm">
+              High-volume reliability for wholesale channels.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Process -->
+    <section id="process" class="py-24 bg-luper-surface">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20">
+          <span
+            class="text-luper-accent font-bold tracking-widest uppercase text-sm mb-4 block"
+            >End-to-End Control</span
+          >
+          <h2 class="text-4xl md:text-5xl font-bold text-luper-dark">
+            From Sourcing to Shipment
+          </h2>
+          <p class="mt-4 text-luper-dark/60">
+            Each step documented. Each stage accountable.
+          </p>
+        </div>
+
+        <div class="relative">
+          <!-- Timeline Line -->
+          <div
+            class="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 bg-luper-dark/10 transform md:-translate-x-1/2"
+          ></div>
+
+          <div class="space-y-12">
+            <!-- Step 1 -->
+            <div
+              class="relative flex flex-col md:flex-row items-center justify-between group"
+            >
+              <div
+                class="order-1 md:w-5/12 text-left md:text-right pl-20 md:pl-0 md:pr-12"
+              >
+                <h3 class="text-2xl font-bold text-luper-dark">
+                  Requirement & Tech Review
+                </h3>
+                <p class="mt-2 text-luper-dark/70">
+                  Deep dive into your tech packs to identify potential
+                  production risks early.
+                </p>
+              </div>
+              <div
+                class="absolute left-8 md:left-1/2 transform -translate-x-1/2 w-16 h-16 rounded-full bg-white border-4 border-luper-dark flex items-center justify-center z-10 shadow-lg group-hover:bg-luper-dark group-hover:text-white transition-colors duration-300"
+              >
+                <i class="fa-solid fa-magnifying-glass text-xl"></i>
+              </div>
+              <div
+                class="order-1 md:w-5/12 pl-20 md:pl-12 opacity-50 text-sm font-mono hidden md:block"
+              >
+                STAGE 01
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div
+              class="relative flex flex-col md:flex-row items-center justify-between group"
+            >
+              <div
+                class="order-1 md:w-5/12 text-left md:text-right pl-20 md:pl-0 md:pr-12 opacity-50 text-sm font-mono hidden md:block"
+              >
+                STAGE 02
+              </div>
+              <div
+                class="absolute left-8 md:left-1/2 transform -translate-x-1/2 w-16 h-16 rounded-full bg-white border-4 border-luper-dark flex items-center justify-center z-10 shadow-lg group-hover:bg-luper-dark group-hover:text-white transition-colors duration-300"
+              >
+                <i class="fa-solid fa-pen-ruler text-xl"></i>
+              </div>
+              <div class="order-1 md:w-5/12 pl-20 md:pl-12">
+                <h3 class="text-2xl font-bold text-luper-dark">
+                  Sampling & Benchmark Approval
+                </h3>
+                <p class="mt-2 text-luper-dark/70">
+                  Creating the 'Golden Sample' that serves as the absolute
+                  standard for bulk.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div
+              class="relative flex flex-col md:flex-row items-center justify-between group"
+            >
+              <div
+                class="order-1 md:w-5/12 text-left md:text-right pl-20 md:pl-0 md:pr-12"
+              >
+                <h3 class="text-2xl font-bold text-luper-dark">
+                  Controlled Production Execution
+                </h3>
+                <p class="mt-2 text-luper-dark/70">
+                  Manufacturing with real-time oversight on line balancing and
+                  output quality.
+                </p>
+              </div>
+              <div
+                class="absolute left-8 md:left-1/2 transform -translate-x-1/2 w-16 h-16 rounded-full bg-white border-4 border-luper-dark flex items-center justify-center z-10 shadow-lg group-hover:bg-luper-dark group-hover:text-white transition-colors duration-300"
+              >
+                <i class="fa-solid fa-gears text-xl"></i>
+              </div>
+              <div
+                class="order-1 md:w-5/12 pl-20 md:pl-12 opacity-50 text-sm font-mono hidden md:block"
+              >
+                STAGE 03
+              </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div
+              class="relative flex flex-col md:flex-row items-center justify-between group"
+            >
+              <div
+                class="order-1 md:w-5/12 text-left md:text-right pl-20 md:pl-0 md:pr-12 opacity-50 text-sm font-mono hidden md:block"
+              >
+                STAGE 04
+              </div>
+              <div
+                class="absolute left-8 md:left-1/2 transform -translate-x-1/2 w-16 h-16 rounded-full bg-white border-4 border-luper-dark flex items-center justify-center z-10 shadow-lg group-hover:bg-luper-dark group-hover:text-white transition-colors duration-300"
+              >
+                <i class="fa-solid fa-clipboard-check text-xl"></i>
+              </div>
+              <div class="order-1 md:w-5/12 pl-20 md:pl-12">
+                <h3 class="text-2xl font-bold text-luper-dark">
+                  QA Inspection & Compliance
+                </h3>
+                <p class="mt-2 text-luper-dark/70">
+                  Rigorous testing against AQL standards before packing.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div
+              class="relative flex flex-col md:flex-row items-center justify-between group"
+            >
+              <div
+                class="order-1 md:w-5/12 text-left md:text-right pl-20 md:pl-0 md:pr-12"
+              >
+                <h3 class="text-2xl font-bold text-luper-dark">
+                  Secure Export Dispatch
+                </h3>
+                <p class="mt-2 text-luper-dark/70">
+                  Efficient logistics coordination for on-time delivery to your
+                  warehouse.
+                </p>
+              </div>
+              <div
+                class="absolute left-8 md:left-1/2 transform -translate-x-1/2 w-16 h-16 rounded-full bg-white border-4 border-luper-dark flex items-center justify-center z-10 shadow-lg group-hover:bg-luper-dark group-hover:text-white transition-colors duration-300"
+              >
+                <i class="fa-solid fa-plane-departure text-xl"></i>
+              </div>
+              <div
+                class="order-1 md:w-5/12 pl-20 md:pl-12 opacity-50 text-sm font-mono hidden md:block"
+              >
+                STAGE 05
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section id="contact" class="py-24 bg-white relative overflow-hidden">
+      <div
+        class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
+      >
+        <h2 class="text-5xl md:text-6xl font-bold text-luper-dark mb-8">
+          Your Brand Deserves <br />Predictable Quality.
+        </h2>
+        <p class="text-xl text-luper-dark/70 mb-12 max-w-2xl mx-auto">
+          When quality failures cost more than production itself, structure
+          becomes your advantage. Let's build a production system your customers
+          can trust.
+        </p>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-6">
+          <button
+            class="px-10 py-5 bg-luper-dark text-luper-light rounded-full font-bold text-lg hover:bg-luper-accent transition-all duration-300 shadow-xl shadow-luper-dark/20 transform hover:-translate-y-1"
+          >
+            Schedule a Production Consultation
+          </button>
+          <button
+            class="px-10 py-5 bg-transparent border-2 border-luper-dark text-luper-dark rounded-full font-bold text-lg hover:bg-luper-dark hover:text-luper-light transition-all duration-300"
+          >
+            Download Capability Profile
+          </button>
+        </div>
+      </div>
+
+      <!-- Decorative Circles -->
+      <div
+        class="absolute top-0 left-0 -ml-20 -mt-20 w-64 h-64 bg-luper-accent/10 rounded-full blur-3xl"
+      ></div>
+      <div
+        class="absolute bottom-0 right-0 -mr-20 -mb-20 w-80 h-80 bg-luper-gold/10 rounded-full blur-3xl"
+      ></div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="bg-luper-dark text-white pt-20 pb-10 border-t border-white/10"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16"
+        >
+          <!-- Brand -->
+          <div class="space-y-6">
+            <a
+              href="#"
+              class="font-serif font-black text-3xl tracking-wider text-white"
+            >
+              LUPER
+            </a>
+            <p class="text-white/60 text-sm leading-relaxed">
+              Engineered garments for global brands. We bridge the gap between
+              design intent and manufacturing reality.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-luper-dark transition-all duration-300"
+              >
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-luper-dark transition-all duration-300"
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-luper-dark transition-all duration-300"
+              >
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h4 class="text-lg font-bold mb-6">Company</h4>
+            <ul class="space-y-4 text-sm text-white/60">
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Capability Profile</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Sustainability</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Careers</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Services -->
+          <div>
+            <h4 class="text-lg font-bold mb-6">Services</h4>
+            <ul class="space-y-4 text-sm text-white/60">
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Apparel Sourcing</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Production Management</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Quality Assurance</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Logistics & Export</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+        </div>
+
+        <div
+          class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+        >
+          <p class="text-sm text-white/40">
+            © 2026 Luper. All rights reserved.
+          </p>
+          <div class="flex space-x-6 text-sm text-white/40">
+            <a href="#" class="hover:text-white transition-colors"
+              >Privacy Policy</a
+            >
+            <a href="#" class="hover:text-white transition-colors"
+              >Terms of Service</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const btn = document.getElementById("mobile-menu-btn");
+      const menu = document.getElementById("mobile-menu");
+
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+
+      // Sticky Navbar Effect
+      window.addEventListener("scroll", () => {
+        const navbar = document.getElementById("navbar");
+        if (window.scrollY > 10) {
+          navbar.classList.add("shadow-md");
+        } else {
+          navbar.classList.remove("shadow-md");
+        }
+      });
+    </script>
+  </body>
+</html>
